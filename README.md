@@ -5,9 +5,9 @@ This repository is an example implementation of a Blog based on Laravel and Mong
 
 #### Dependencies
 
-[Laravel]('https://laravel.com/')
+[Laravel](https://laravel.com)
 
-[Mongo Auto Sync]('https://github.com/offline-agency/laravel-mongo-auto-sync')
+[Mongo Auto Sync](https://github.com/offline-agency/laravel-mongo-auto-sync)
 
 #### Clone repo
 
@@ -73,7 +73,7 @@ php artisan db:seed
 ## Features
 
 ### Frontend
-- Home Last Article with standard [Laravel simple pagination]('https://github.com/Giacomo92')
+- Home Last Article with standard [Laravel simple pagination](https://laravel.com/docs/5.8/pagination#paginating-query-builder-results)
 - Category List paginated with standard Laravel simple pagination
 - Article Detail
 - Category Detail with associated articles paginated with standard Laravel simple pagination
@@ -135,21 +135,21 @@ composer test
 
 ## Contributing
 
-Please see [Contributing]('https://github.com/offline-agency/mondodb-test/blob/master/CONTRIBUTING.md') for details
+Please see [Contributing](CONTRIBUTING.md) for details
 
 ## Security
 
-If you discover any security-related issues, please email [support@offlineagency.com]('https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=support@offlineagency.com') instead of using the issue tracker.
+If you discover any security-related issues, please email support@offlineagency.com instead of using the issue tracker.
 
 ## Credits
 
-- [Giacomo Fabbian]('https://github.com/Giacomo92')
-- [All Contributors]('https://github.com/offline-agency/mongodb-test/pulse')
+- [Giacomo Fabbian](https://github.com/Giacomo92)
+- [All Contributors](../../contributors)
 
 ## About us
 
-Offline Agency is a web design agency based in Padua, Italy. You'll find an overview of our projects [on our website]('https://offlineagency.it/#home').
+Offline Agency is a web design agency based in Padua, Italy. You'll find an overview of our projects [on our website](https://offlineagency.it).
 
 ## License
 
-The MIT License (MIT). Please see [License File]('https://github.com/offline-agency/mongodb-test/blob/master/LICENSE.md') for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
