@@ -2,7 +2,6 @@
 This repository is an example implementation of a Blog based on Laravel and MongoDB
   
 ## Installation
-Ciao
 
 #### Dependencies
 
