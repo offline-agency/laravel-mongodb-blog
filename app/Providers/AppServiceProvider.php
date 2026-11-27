@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive( 'ml', function ( $expression ) {
-            return '<?php echo getTranslatedContent(' . $expression . '); ?>';
-        } );
+        Blade::directive('ml', function ($expression) {
+            return '<?php echo getTranslatedContent('.$expression.'); ?>';
+        });
     }
 }

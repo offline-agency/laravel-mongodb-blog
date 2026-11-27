@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\File;
 use MongoDB\BSON\UTCDateTime;
 
 if (!function_exists('formatDate')) {
-    function formatDate(UTCDateTime $date)
+    function formatDate(UTCDateTime|DateTimeInterface $date)
     {
-
-        $date = $date->toDateTime();
+        // laravel-mongodb 5 hydrates date fields as Carbon, raw documents carry a UTCDateTime.
+        if ($date instanceof UTCDateTime) {
+            $date = $date->toDateTime();
+        }
 
         return $date->format('j F Y'); // 28 april 2013 21:58:16
     }
@@ -68,11 +70,13 @@ if (!function_exists('processRelatedArticles')) {
 if (!function_exists('fixDate')) {
 
 
-    function fixDate(UTCDateTime $DB_value)
+    function fixDate(UTCDateTime|DateTimeInterface $DB_value)
     {
 
         if (!is_null($DB_value)) {
-            $DB_value = $DB_value->__toString() / 1000;
+            $DB_value = $DB_value instanceof UTCDateTime
+                ? $DB_value->toDateTime()->getTimestamp()
+                : $DB_value->getTimestamp();
             $DB_value = date('d-m-Y H:i:s', $DB_value);//DB date
             return $DB_value;
         } else {

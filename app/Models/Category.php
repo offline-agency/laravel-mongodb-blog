@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Jenssegers\Mongodb\Helpers\EloquentBuilder;
+use MongoDB\Laravel\Eloquent\Builder;
 use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
 
 
