@@ -1,6 +1,17 @@
 # A Demo Blog made with MongoDB and Laravel
 This repository is an example implementation of a Blog based on Laravel and MongoDB
   
+## Requirements
+
+| Requirement | Version |
+|---|---|
+| PHP | 8.4, 8.5 or 8.6 |
+| [Laravel](https://laravel.com) | 13 |
+| PHP extension | `ext-mongodb` |
+| MongoDB server | 8.0 (used in CI) |
+
+`offline-agency/laravel-mongo-auto-sync` 4.0 is required from its `chore/php-8.6-upgrade` branch until 4.0.0 is published on Packagist. `composer.json` already declares the repository.
+
 ## Installation
 
 #### Dependencies
@@ -127,11 +138,19 @@ php artisan db:seed
 
 ## Testing
 
-Run the test with:
+The tests run against a real MongoDB (they drop the `blog_testing` database before every test). Start one, for example with Docker:
+
+``` bash
+docker run -d --name blog-mongo -p 27017:27017 mongo:8.0
+```
+
+Run the tests with:
 
 ``` bash
 composer test
-```  
+```
+
+If MongoDB listens elsewhere, set `MONGO_HOST` and `MONGO_PORT` in your environment.
 
 ## Contributing
 
