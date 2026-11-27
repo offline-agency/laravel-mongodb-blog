@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 
 use App\Models\Article;
 use App\Models\Category;
@@ -58,11 +60,11 @@ class ArticlesTableSeeder  extends Seeder
      */
     private function getAuthors(int $authorNumber)
     {
-        $faker = Faker\Factory::create(cl()); // create a faker
+        $faker = \Faker\Factory::create(cl()); // create a faker
         $authors = [];
 
         for ($i = 0; $i < 10; $i++) {
-            $authors[] = $faker->name;
+            $authors[] = $faker->name();
         }
         return $authors;
     }
@@ -80,7 +82,7 @@ class ArticlesTableSeeder  extends Seeder
         $miniCategories = [];
         foreach ($categories as $category){
 
-            $miniCategory = new StdClass();
+            $miniCategory = new \StdClass();
 
             $miniCategory->ref_id = $category->id;
             $miniCategory->name = getTranslatedContent($category->name);

@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +12,7 @@ class UsersTableSeeder  extends Seeder
     public function run()
     {
 
-        DB::collection('users')->insert([
+        DB::table('users')->insert([
 
             [
                 'name' => "John",
@@ -18,9 +20,9 @@ class UsersTableSeeder  extends Seeder
                 'email' => 'test@test.com',
                 'password' => bcrypt('demo'),
                 'remember_token' => '',
-                'email_verified_at' => new UTCDateTime(new DateTime('now')),
-                'created_at' => new UTCDateTime(new DateTime('now')),
-                'updated_at' => new UTCDateTime(new DateTime('now')),
+                'email_verified_at' => new UTCDateTime(new \DateTime('now')),
+                'created_at' => new UTCDateTime(new \DateTime('now')),
+                'updated_at' => new UTCDateTime(new \DateTime('now')),
             ]
             ]);
     }
